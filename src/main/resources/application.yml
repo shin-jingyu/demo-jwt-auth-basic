@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: jwtOauth
+
+  server:
+    address: 0.0.0.0
+    port: 8080
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/demo
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: root
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: create
