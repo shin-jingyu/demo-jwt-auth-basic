@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.example.demo.common;
 
 import com.example.demo.domain.entity.UserEntity;
 import com.example.demo.repository.UserJpaRepository;
