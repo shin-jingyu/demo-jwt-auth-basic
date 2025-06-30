@@ -6,7 +6,6 @@ import com.example.demo.domain.entity.UserEntity;
 import com.example.demo.repository.UserJpaRepository;
 import com.example.demo.usecase.AuthUseCase;
 import com.example.demo.util.JwtUtil;
-import com.example.demo.util.PasswordUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

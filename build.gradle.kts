@@ -21,13 +21,17 @@ dependencies {
     // web
     implementation("org.springframework.boot:spring-boot-starter-web")
 
+    // Spring Security
+    implementation("org.springframework.boot:spring-boot-starter-security")
+
     //jwt
-    implementation("io.jsonwebtoken:jjwt-api:0.11.5")
-    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
-    runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
+    implementation("io.jsonwebtoken:jjwt-api:0.12.5")
+    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.12.5")
+    runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.12.5")
 
     //OAuth2
-    implementation ("org.springframework.boot:spring-boot-starter-webflux")
+    implementation ("org.springframework.boot:spring-boot-starter-oauth2-client")
+
 
     // lombok
     compileOnly("org.projectlombok:lombok")
@@ -43,10 +47,6 @@ dependencies {
     implementation ("org.springframework.boot:spring-boot-starter-data-redis")
 
     runtimeOnly("org.postgresql:postgresql")
-
-    //bcrypt
-    implementation("org.mindrot:jbcrypt:0.4")
-
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))

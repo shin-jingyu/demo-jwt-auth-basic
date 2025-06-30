@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.controller.dto.LoginRequestDto;
-import com.example.demo.controller.dto.LoginResponseDto;
 import com.example.demo.usecase.AuthUseCase;
 import lombok.RequiredArgsConstructor;
 
