@@ -1,10 +1,12 @@
 package com.example.demo.controller;
 
 import com.example.demo.controller.dto.LoginRequestDto;
+import com.example.demo.controller.dto.LoginResponseDto;
 import com.example.demo.usecase.AuthUseCase;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CookieValue;
@@ -61,5 +63,14 @@ public class AuthController {
                 .build();
     }
 
-
+    @PostMapping("/auth/refresh")
+    public ResponseEntity<LoginResponseDto> refreshToken(
+            @CookieValue(value = "refresh_token", required = false) String refreshToken
+    ) {
+        if (refreshToken == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+        LoginResponseDto tokens = authUseCase.reissueAccessToken(refreshToken);
+        return ResponseEntity.ok(tokens);
+    }
 }
