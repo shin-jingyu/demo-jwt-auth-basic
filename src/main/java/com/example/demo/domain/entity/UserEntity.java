@@ -30,4 +30,8 @@ public class UserEntity {
 
     @Column(nullable = false)
     private String nickname;
+
+    private String provider;
+    private String providerId;
+
 }
